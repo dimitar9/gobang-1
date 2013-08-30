@@ -19,8 +19,8 @@ int game()
 			return 0;
 		}
 		//黑方走子	
-		next = get_computer_step(board,BLACK); //计算或等待输入棋步
-		set_piece(board, next); //落子
+		next = get_input_step(board,BLACK); //计算或等待输入棋步
+		board[next.row][next.col] = next.player;
 		print_board( board );   //显示
 		printf("上一步：黑方( %c%d )\n", next.col+'A', next.row+1);
 		if( is_winner(board,next) )
@@ -28,7 +28,7 @@ int game()
 			printf("棋局结束，黑方胜\n");
 			return 0;
 		}
-		sleep(1);
+		//sleep(1);
 
 		if( 225 == count_piece(board) )
 		{
@@ -37,7 +37,7 @@ int game()
 		}
 		//白方走子
 		next = get_computer_step( board, WHITE); 
-		set_piece(board, next);
+		board[next.row][next.col] = next.player;
 		print_board( board );
 		printf("上一步：白方( %c%d )\n", next.col+'A', next.row+1);
 		if( is_winner(board,next) )
@@ -45,7 +45,7 @@ int game()
 			printf("棋局结束，白方胜\n");
 			return 0;
 		}
-		sleep(1);
+		//sleep(1);
 	}
 
 	return 0;

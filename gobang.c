@@ -4,13 +4,6 @@
 #include <string.h>
 #include "gobang.h"
 
-
-//落子，把棋步s里的信息,设置到棋盘中
-inline void set_piece(char board[15][15], STEP s)
-{
-	board[s.row][s.col] = s.player;
-}
-
 //判断棋盘是否已满
 int count_piece(char board[15][15] )
 {
@@ -146,11 +139,7 @@ int get_line_score(char board[15][15], STEP s, int dir_index)
 	int row, col, i;	
 
 	if( board[s.row][s.col] > 0 )
-<<<<<<< HEAD
-		return 0; //此处有子，0分
-=======
 		return 0;     //此处有子, 0分
->>>>>>> refactor
 	if( is_blind_alley(board, s, dir_index) )
 		return 0;     //死胡同，两头被夹，XOOOX, 0分
 

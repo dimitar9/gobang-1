@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 #include "ui.h"
+#include "gobang.h"
 
 //表示界面上黑白子的字符,相关宏,下标与字符有对应关系 
 //NOTHING 0   '.'

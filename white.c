@@ -20,7 +20,7 @@ int main()
 			return 0;
 		}
 		next = read_step("black.pipe", BLACK); //读取黑方棋步
-		set_piece(board, next);
+		board[next.row][next.col] = next.player;
 		print_board( board );
 
 		printf("上一步：黑方( %c%d )\n", next.col+'a', next.row+1);
@@ -37,7 +37,7 @@ int main()
 		}
 		next = get_computer_step(board,WHITE);
 		write_step("white.pipe", next); //写入文件通知对方
-		set_piece(board, next); //落子
+		board[next.row][next.col] = next.player;
 		print_board( board );   //显示
 		printf("上一步：白方( %c%d )\n", next.col+'a', next.row+1);
 		if( is_winner(board,next) )

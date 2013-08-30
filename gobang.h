@@ -37,11 +37,6 @@ extern const OFFSET  direction[4] ;
 //让计算机为player一方计算出合适的一步棋
 extern STEP get_computer_step( char board[15][15], char player);
 
-
-
-//落子，把棋步s里的信息,设置到棋盘中
-extern inline void set_piece(char board[15][15], STEP s);
-
 //计算盘上棋子数量
 extern int count_piece(char board[15][15] );
 

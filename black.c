@@ -21,7 +21,7 @@ int main()
 		}
 		//黑方走子	
 		next = get_computer_step(board,BLACK); //计算或等待输入棋步
-		set_piece(board, next); //落子
+		board[next.row][next.col] = next.player;
 		write_step("black.pipe", next); //写入文件通知对方
 		print_board( board );   //显示
 		printf("上一步：黑方( %c%d )\n", next.col+'a', next.row+1);
@@ -39,7 +39,7 @@ int main()
 		//白方走子
 		//next = get_computer_step( board, WHITE); 
 		next = read_step("white.pipe", WHITE);
-		set_piece(board, next);
+		board[next.row][next.col] = next.player;
 		print_board( board );
 		printf("上一步：白方( %c%d )\n", next.col+'a', next.row+1);
 		if( is_winner(board,next) )
