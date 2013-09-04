@@ -63,7 +63,7 @@ extern STEP get_input_step( char board[15][15], char player)
 INPUT:
 	do
 	{
-		printf("%s走子(例:d4) ", BLACK==player ? "黑棋" : "白棋" );
+		printf("请 %s 走子(例:d4) ", BLACK==player ? "黑棋" : "白棋" );
 		fgets(cmd, 16, stdin);
 
 		if( 0 == strcmp(cmd,"quit\n") || 0 == strcmp(cmd, "exit\n") )
