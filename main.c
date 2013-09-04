@@ -28,7 +28,7 @@ int game()
 			printf("棋局结束，黑方胜\n");
 			return 0;
 		}
-		//sleep(1);
+		sleep(1);
 
 		if( 225 == count_piece(board) )
 		{
@@ -45,7 +45,7 @@ int game()
 			printf("棋局结束，白方胜\n");
 			return 0;
 		}
-		//sleep(1);
+		sleep(1);
 	}
 
 	return 0;
